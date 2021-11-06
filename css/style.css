@@ -27,7 +27,7 @@
 }
 
 :root { /*cuando se pone como pseudo clase tiene mas peso que el html*/
-  font-size: 18px;
+  font-size: 16px;
   --blanco: #FFFFFE; /*variable*/
   --azulClaro: #B8C1EC;
 }
@@ -36,7 +36,7 @@ body{
   margin: 0 auto;
   background: #232946;
   color:var(--blanco);
-  font-family: charter;/*Se coloca entre comillas solo si hay un espacio*/
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -51,9 +51,8 @@ h3 {
   font-size: 24px;
 }
 
-
 header {
-  font-family: charter;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: var(--blanco);
   width: 50vw;
@@ -77,11 +76,49 @@ nav details summary {
   font-weight: bold;
 }
 
-
 p {
   color: var(--azulClaro);
+}
+
+a {
+  color: var(--azulClaro);
+}
+
+a:hover {
+  color: var(--blanco);
+}
+
+pre {
+  background: #6164709a;
+  color: var(--blanco);
+  height: 344px;
+  width: 901.05px;
+}
+
+.hero{
+  background-image: linear-gradient(to top, rgba(130, 139, 175, 0.3), transparent), url('../images/patron.png');
+  height: 200px;
+}
+.section-content {
+  counter-reset: titleList;
+}
+.section-content h3 {
+  counter-increment: titleList;
+}
+
+.section-content h3::before {
+  content: counter(titleList) ". ";
+}
+
+.section-content h3::after {
+  content: '';
+  /*width: 32px;
+  height: 4px;
+  background: var(--blanco);
+  display: block;*/
 }
 
 img{
   margin-left: 2em;
 }
+
