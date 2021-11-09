@@ -1,0 +1,124 @@
+@font-face {
+  font-family: charter;
+  src: url('../fonts/fonts/charter-regular.otf');
+  font-style: normal;
+  font-weight: 400; /*los pesos de fuentes van de 100 en 100. normal = 400*/
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400; /*los pesos de fuentes van de 100 en 100. normal = 400*/
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold; /*los pesos de fuentes van de 100 en 100. normal = 400*/
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold; /*los pesos de fuentes van de 100 en 100. normal = 400*/
+}
+
+:root { /*cuando se pone como pseudo clase tiene mas peso que el html*/
+  font-size: 16px;
+  --blanco: #FFFFFE; /*variable*/
+  --gris20: #a7a8a8;
+}
+
+body{
+  margin: 0 auto;
+  background: #171718;
+  color:var(--blanco);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: var(--blanco);
+  width: 50vw;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--gris20);
+}
+
+header ol {
+  color: var(--gris20);
+}
+
+header a:hover {
+  color: var(--blanco);
+}
+
+nav details summary {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+p {
+  color: var(--gris20);
+}
+
+a {
+  color: var(--gris20);
+}
+
+a:hover {
+  color: var(--blanco);
+}
+
+pre {
+  background: #6164709a;
+  color: var(--blanco);
+  height: 344px;
+  width: 901.05px;
+}
+
+.hero{
+  background-image: linear-gradient(to top, rgba(28, 28, 29, 0.844), transparent), url('../images/patron.png');
+  height: 200px;
+}
+.section-content {
+  counter-reset: titleList;
+}
+.section-content h3 {
+  counter-increment: titleList;
+}
+
+.section-content h3::before {
+  content: counter(titleList) ". ";
+}
+
+.section-content h3::after {
+  content: '';
+  /*width: 32px;
+  height: 4px;
+  background: var(--blanco);
+  display: block;*/
+}
+
+img{
+  margin-left: 2em;
+}
+
