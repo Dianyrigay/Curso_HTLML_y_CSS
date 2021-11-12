@@ -30,22 +30,29 @@
   font-size: 16px;
   --blanco: #FFFFFE; /*variable*/
   --gris20: #a7a8a8;
+  --gris30: #171718;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body{
   margin: 0 auto;
-  background: #171718;
+  background: var(--gris30);
   color:var(--blanco);
   font-family: 'Roboto', sans-serif;
 }
 
 hr {
-  margin: 64px 0;
+  margin: 40px 0;
+  border: 1px solid rgba(97, 97, 97, 0.2);;
 }
 
 h1 {
   font-size: 60px;
   margin: 64px 0 16px ;
+  font-weight: normal;
 }
 
 /*h1 + p {
@@ -65,11 +72,38 @@ h3 {
   font-weight: normal;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  position: relative;
+}
+
+.main {
+  /* componente base: para poder poner un fondo y que el contenido se sienta seguro */
+}
+
+.wrapper {
+  width: 902px;
+  margin: auto;
+  /* para delimitar las fronteras del contenido */
+}
+
+.main-content{
+  background: var(--gris30);
+}
+
 header {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: var(--blanco);
-  width: 50vw;
+  width: 188px;
+  position: absolute;
+  top: 64px;
+  left: -232px;
+  z-index: 1;
 }
 
 header a {
@@ -81,6 +115,11 @@ header ol {
   color: var(--gris20);
 }
 
+header li {
+  margin-bottom: 16px;
+  color: var(--gris20);
+}
+
 header a:hover {
   color: var(--blanco);
 }
@@ -88,10 +127,15 @@ header a:hover {
 nav details summary {
   font-size: 16px;
   font-weight: bold;
+  line-height: 24px;
 }
 
 p {
   color: var(--gris20);
+}
+
+p a {
+  color: var(--blanco);
 }
 
 a {
@@ -105,28 +149,38 @@ a:hover {
 pre {
   background: #6164709a;
   color: var(--blanco);
+  width: 636px;
   height: 344px;
-  /* width: 901.05px; */
-  padding: 40px;
+  padding: 24px;
+  border-radius: 8px;
   font-family: 'Roboto';
   line-height: 24px;
+  border-left: 4px solid #8aeafd;
 }
 
 blockquote {
+  background: #6164709a;
+  width: 636px;
+  height: 128px;
   font-size: 24px;
+  border-radius: 8px;
   margin: 32px 0;
-  padding-left: 16px;
+  line-height: 24px;
+  border-left: 4px solid #8aeafd;
+  margin: 60px 0px 63px;
+  padding: 24px;
+}
+
+blockquote p {
+  color: var(--blanco);
 }
 
 blockquote span {
-  color: #7c7e7e;
-}
-blockquote span::before {
-  content: '-';
+  color: var(--blanco);
 }
 
-.section-content ul,li {
-  color: var(--gris20)
+blockquote span::before {
+  content: '-';
 }
 
 .hero{
@@ -134,10 +188,20 @@ blockquote span::before {
   height: 200px;
 }
 
-.section-content ul li {
-  margin-bottom: 16px;
+.section-content {
+  counter-reset: titleList;
+  position: relative;
 }
 
+.section-content ul li {
+  margin-bottom: 16px;
+  color: var(--gris20);
+}
+
+.section-content ol li {
+  margin-bottom: 16px;
+  color: var(--gris20);
+}
 
 .section-content + hr {
   display: none; /*para que se oculte el elemento. Esta bien dejarlo en el HTML ya que al leerse habra un espacio, visualmente se quita*/
@@ -145,11 +209,9 @@ blockquote span::before {
 
 .section-content img {
   margin-top: 40px;
+  max-inline-size: 100%;
 }
 
-.section-content {
-  counter-reset: titleList;
-}
 .section-content h3 {
   counter-increment: titleList;
   padding-bottom: 4px;
