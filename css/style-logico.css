@@ -264,27 +264,30 @@ footer {
     text-align: center;
     margin-block-start: 80px;
     font-size: 12px;
-    block-size: 100px;
 }
 
-/* footer a {
+footer a {
     text-decoration: none;
-    color: var(--gris30);
-    padding: 0 15px 0 0;
+    color: var(--blanco);
 }
-
-footer i {
-    color: var(--gris30);
-}
-
-.footer-i i {
-    margin-block-end: 45px;
-} */
 
 footer p {
     color: var(--blanco);
     display: inline-block;
-    margin-block-start: 40px;
+    margin-block-start: 30px;
+}
+
+.footer p .far{
+  font-size: 12px;
+}
+
+.footer-a i {
+    margin-block-end: 30px;
+}
+
+.footer-a a .fab{
+  font-size: 16px;
+  padding: 0 15px 0 0;
 }
 
 @media screen and (min-width: 1366px) {
@@ -316,6 +319,10 @@ footer p {
 
   footer {
       font-size: 16px;
+  }
+
+  .footer-a a .fab{
+    font-size: 20px;
   }
 }
 
